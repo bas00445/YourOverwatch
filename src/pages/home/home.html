@@ -39,7 +39,7 @@
 
     <div class="player-container">
       <ion-list>
-        <ion-item *ngFor="let playerTag of appService.listOfPlayerTags">
+        <ion-item *ngFor="let playerTag of appService.listOfPlayerTags" class="fade-in-anim">
           <ion-avatar item-start>
             <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
           </ion-avatar>
