@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-sm-10 class="center-x">
+        <ion-item class="tagInput">
+          <ion-input type="text" placeholder="Enter a tag name"
+                     name="newTagName" [(ngModel)]="newTagName"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-sm-10 class="center-x">
+        <ion-item class="tagInput">
+          <ion-input type="text" placeholder="Enter a tag id"
+                     name="newTagID" [(ngModel)]="newTagID"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-sm-10 class="center-x">
+        <button ion-button block tappable (click)="getNewBattleTagData()">
+          <p *ngIf="!isLoading" style="display:inline">Submit</p>
+          <i *ngIf="isLoading" class="loadingIcon fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <div class="player-container">
+      <ion-list>
+        <ion-item *ngFor="let playerTag of appService.listOfPlayerTags">
+          <ion-avatar item-start>
+            <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
+          </ion-avatar>
+
+          <h3>{{playerTag.name}}</h3>
+          <h4>Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}} </h4>
+
+        </ion-item>
+      </ion-list>
+    </div>
+
+
+  </ion-grid>
+
+
+</ion-content>
