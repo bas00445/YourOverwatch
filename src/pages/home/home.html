@@ -37,20 +37,26 @@
       </ion-col>
     </ion-row>
 
-    <div class="player-container">
-      <ion-list>
-        <ion-item *ngFor="let playerTag of appService.listOfPlayerTags" class="fade-in-anim"
-        tappable (click)="goToUserStatPage(playerTag)" >
-          <ion-avatar item-start>
-            <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
-          </ion-avatar>
+    <ion-row class="player-contaner">
+      <ion-col col-sm-10 class="center-x">
+        <div *ngFor="let playerTag of appService.listOfPlayerTags" class="fade-in-anim"
+             tappable (click)="goToUserStatPage(playerTag)">
 
-          <h3>{{playerTag.userStat.name}}</h3>
-          <h4>Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}} </h4>
+          <ion-row>
+            <ion-col>
+              <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
+            </ion-col>
 
-        </ion-item>
-      </ion-list>
-    </div>
+            <ion-col>
+              <h3>{{playerTag.userStat.name}}</h3>
+              <h4>Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}} </h4>
+            </ion-col>
+
+          </ion-row>
+        </div>
+
+      </ion-col>
+    </ion-row>
 
 
   </ion-grid>
