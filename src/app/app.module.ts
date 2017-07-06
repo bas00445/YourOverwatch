@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {AppService} from '../services/AppService';
 import { StatPage } from '../pages/stat/stat';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { StatPage } from '../pages/stat/stat';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

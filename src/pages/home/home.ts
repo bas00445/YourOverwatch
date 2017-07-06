@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Http} from '@angular/http';
 import {AppService} from '../../services/AppService';
+import {StatPage} from '../stat/stat';
 
 @Component({
   selector: 'page-home',
@@ -38,13 +39,20 @@ export class HomePage {
   }
 
   public addNewBattleTag(){
-    this.appService.listOfPlayerTags.push({name: this.newTagName,
-      id: this.newTagID,
-      data: this.newJSONTag});
+    this.appService.listOfPlayerTags.push(
+      { userStat: {name: this.newTagName,
+                     id: this.newTagID},
+            data: this.newJSONTag
+      });
 
     this.newTagName = this.newTagID = '';
     console.log(this.appService);
 
+  }
+
+  public goToUserStatPage(userTag){
+
+    this.navCtrl.push(StatPage, userTag);
   }
 
 }

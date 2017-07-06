@@ -39,12 +39,13 @@
 
     <div class="player-container">
       <ion-list>
-        <ion-item *ngFor="let playerTag of appService.listOfPlayerTags" class="fade-in-anim">
+        <ion-item *ngFor="let playerTag of appService.listOfPlayerTags" class="fade-in-anim"
+        tappable (click)="goToUserStatPage(playerTag)" >
           <ion-avatar item-start>
             <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
           </ion-avatar>
 
-          <h3>{{playerTag.name}}</h3>
+          <h3>{{playerTag.userStat.name}}</h3>
           <h4>Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}} </h4>
 
         </ion-item>
