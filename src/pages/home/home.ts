@@ -18,7 +18,8 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               private appService: AppService,
               private http: Http) {
-
+      this.newTagName = 'OverTone';
+      this.newTagID = '11619';
   }
 
   public getNewBattleTagData(){

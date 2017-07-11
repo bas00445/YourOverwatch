@@ -7,18 +7,34 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
   <ion-grid>
 
+
+
     <ion-row align="center">
-      <ion-col col-12>
+      <ion-col col-8>
         <canvas baseChart
                 [data]="doughnutChartData"
                 [labels]="doughnutChartLabels"
                 [chartType]="doughnutChartType"
                 (chartHover)="chartHovered($event)"
                 (chartClick)="chartClicked($event)"></canvas>
+      </ion-col>
+
+      <ion-col col-4>
+
+        <ion-row>
+          <ion-label>Quick Play</ion-label>
+          <ion-toggle disabled checked="false"></ion-toggle>
+        </ion-row>
+
+        <ion-row>
+          <ion-label>Competitive</ion-label>
+          <ion-toggle disabled checked="false"></ion-toggle>
+        </ion-row>
+
       </ion-col>
 
     </ion-row>
