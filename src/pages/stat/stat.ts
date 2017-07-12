@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { AppService } from '../../services/AppService';
 
 @Component({
@@ -10,11 +10,13 @@ import { AppService } from '../../services/AppService';
 
 export class StatPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private appService: AppService) {
+  constructor(public navCtrl: NavController,
+              private appService: AppService) {
     // If we navigated to this page, we will have an item available as a nav param
 
     this.playerTag = appService.currentUserTag.userStat;
-    this.playerData = appService.currentUserTag.data;
+    // this.playerData = appService.currentUserTag.data;
+    this.setMode('selectQP');
     this.getWinRate();
     this.generateDonutChart();
   }
@@ -25,10 +27,11 @@ export class StatPage {
   public loseRate: any;
 
   public doughnutChartLabels:string[] = ['Win-rate', 'Lost-rate'];
-  public doughnutChartData:number[] = [];
+  public winRateChartData:number[] = [];
   public doughnutChartType:string = 'doughnut';
 
-  public selectMode: any;
+  public currentMode: string;
+  public updateChart = false;
 
   // events
   public chartClicked(e:any):void {
@@ -40,13 +43,31 @@ export class StatPage {
   }
 
   public generateDonutChart(){
-    this.doughnutChartData.push(this.winRate);
-    this.doughnutChartData.push(this.loseRate);
+    this.winRateChartData = [];
+    this.winRateChartData.push(this.winRate);
+    this.winRateChartData.push(this.loseRate);
   }
 
   public getWinRate(){
-    this.winRate = this.playerData.us.stats.competitive.overall_stats.win_rate;
+    this.winRate = this.playerData.overall_stats.win_rate;
     this.loseRate = 100 - this.winRate;
+  }
+
+  public setMode(event: string){
+    this.currentMode = event;
+    this.updateChart = true;
+    this.loadDataByMode();
+    this.getWinRate();
+    this.generateDonutChart();
+    this.updateChart = false;
+  }
+
+  public loadDataByMode(){
+    if(this.currentMode === 'selectQP'){
+      this.playerData = this.appService.currentUserTag.data.us.stats.quickplay;
+    }else{
+      this.playerData = this.appService.currentUserTag.data.us.stats.competitive;
+    }
   }
 
 

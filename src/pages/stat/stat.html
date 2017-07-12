@@ -13,7 +13,7 @@
 
     <ion-row>
       <ion-col col-12>
-        <ion-row radio-group [(ngModel)]="selectMode">
+        <ion-row radio-group (ionChange)="setMode($event)">
 
           <div class="center-x max-w-400 col-content">
             <div class="col-content margin-r-20">
@@ -35,7 +35,7 @@
     <ion-row align="center">
       <ion-col col-sm-12 col-md-6>
         <canvas class="max-w-400" baseChart
-                [data]="doughnutChartData"
+                [data]="winRateChartData"
                 [labels]="doughnutChartLabels"
                 [chartType]="doughnutChartType"
                 (chartHover)="chartHovered($event)"
