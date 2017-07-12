@@ -52,8 +52,8 @@ export class HomePage {
   }
 
   public goToUserStatPage(userTag){
-
-    this.navCtrl.push(StatPage, userTag);
+    this.appService.currentUserTag = userTag;
+    this.navCtrl.setRoot(StatPage);
   }
 
 }

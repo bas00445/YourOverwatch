@@ -16,7 +16,69 @@
 // automatically applied to the <body> element in the app.
 
 
+// Helper Classes //
+$maxVal: 500;
+@for $i from 0 to $maxVal{
+
+  .margin-#{$i}{
+    margin: #{$i}px;
+  }
+  .margin-l-#{$i}{
+    margin-left: #{$i}px;
+  }
+  .margin-r-#{$i}{
+    margin-right: #{$i}px;
+  }
+  .margin-t-#{$i}{
+    margin-top: #{$i}px;
+  }
+  .margin-b-#{$i}{
+    margin-bottom: #{$i}px;
+  }
+
+  .pad-#{$i}{
+    padding: #{$i}px;
+  }
+  .pad-t-#{$i}{
+    padding-top: #{$i}px;
+  }
+  .pad-r-#{$i}{
+    padding-right: #{$i}px;
+  }
+  .pad-b-#{$i}{
+    padding-bottom: #{$i}px;
+  }
+  .pad-l-#{$i}{
+    padding-left: #{$i}px;
+  }
+
+  .min-w-#{$i}{
+    min-width: #{$i}px;
+  }
+  .max-w-#{$i}{
+    max-width: #{$i}px;
+  }
+}
+
+// End Helper Classes //
+
 .scroll-content{
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+.row-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.col-content{
+  display: flex;
+  flex-direction: row;
+}
+
+.center-x{
+  margin: auto;
+}
+
+

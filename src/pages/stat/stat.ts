@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AppService } from '../../services/AppService';
 
 @Component({
   selector: 'page-stat',
@@ -9,11 +10,11 @@ import { NavController, NavParams } from 'ionic-angular';
 
 export class StatPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private appService: AppService) {
     // If we navigated to this page, we will have an item available as a nav param
 
-    this.playerTag = navParams.get('userStat');
-    this.playerData = navParams.get('data');
+    this.playerTag = appService.currentUserTag.userStat;
+    this.playerData = appService.currentUserTag.data;
     this.getWinRate();
     this.generateDonutChart();
   }
@@ -26,6 +27,8 @@ export class StatPage {
   public doughnutChartLabels:string[] = ['Win-rate', 'Lost-rate'];
   public doughnutChartData:number[] = [];
   public doughnutChartType:string = 'doughnut';
+
+  public selectMode: any;
 
   // events
   public chartClicked(e:any):void {

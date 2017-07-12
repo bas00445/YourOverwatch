@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar swipeBackEnabled="false">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Stat</ion-title>
+    <ion-title>Overview</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,11 +11,30 @@
 
   <ion-grid>
 
+    <ion-row>
+      <ion-col col-12>
+        <ion-row radio-group [(ngModel)]="selectMode">
 
+          <div class="center-x max-w-400 col-content">
+            <div class="col-content margin-r-20">
+              <ion-label>Quick Play</ion-label>
+              <ion-radio value="selectQP" checked="true" class="margin-t-12 margin-b-12"></ion-radio>
+            </div>
+
+            <div class="col-content">
+              <ion-label>Competitive</ion-label>
+              <ion-radio value="selectCP" checked="false" class="margin-t-12 margin-b-12"></ion-radio>
+            </div>
+          </div>
+
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
 
     <ion-row align="center">
-      <ion-col col-8>
-        <canvas baseChart
+      <ion-col col-sm-12 col-md-6>
+        <canvas class="max-w-400" baseChart
                 [data]="doughnutChartData"
                 [labels]="doughnutChartLabels"
                 [chartType]="doughnutChartType"
@@ -23,19 +42,6 @@
                 (chartClick)="chartClicked($event)"></canvas>
       </ion-col>
 
-      <ion-col col-4>
-
-        <ion-row>
-          <ion-label>Quick Play</ion-label>
-          <ion-toggle disabled checked="false"></ion-toggle>
-        </ion-row>
-
-        <ion-row>
-          <ion-label>Competitive</ion-label>
-          <ion-toggle disabled checked="false"></ion-toggle>
-        </ion-row>
-
-      </ion-col>
 
     </ion-row>
 
