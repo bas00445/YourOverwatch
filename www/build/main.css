@@ -49232,6 +49232,18 @@ ion-navbar.toolbar {
   margin: auto;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .center-x {
   margin: auto;
 }
@@ -49273,6 +49285,17 @@ ion-navbar.toolbar {
 
 .player-contaner {
   width: 100%;
-  max-height: 370px;
+  height: 370px;
   overflow-y: scroll;
+}
+
+.card-header {
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.card-content {
+  font-size: 20px !important;
+  font-style: italic !important;
 }

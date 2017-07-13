@@ -31,28 +31,33 @@
     <ion-row>
       <ion-col col-sm-10 class="center-x">
         <button ion-button block tappable (click)="getNewBattleTagData()">
-          <p *ngIf="!isLoading" style="display:inline">Submit</p>
-          <i *ngIf="isLoading" class="loadingIcon fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+          <p style="display:inline">Submit</p>
+          <i *ngIf="isLoading" class="loadingIcon fa fa-refresh fa-spin fa-1x fa-fw margin-l-5"></i>
         </button>
       </ion-col>
     </ion-row>
 
-    <ion-row class="player-contaner">
-      <ion-col col-sm-10 class="center-x">
+    <ion-row class="player-contaner" align="center">
+      <ion-col col-sm-10>
         <div *ngFor="let playerTag of appService.listOfPlayerTags" class="fade-in-anim"
              tappable (click)="goToUserStatPage(playerTag)">
 
-          <ion-row>
-            <ion-col>
-              <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
-            </ion-col>
+          <ion-card>
+            <ion-card-content class="pad-0">
+              <ion-row>
+                <ion-col col-4>
+                  <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
+                </ion-col>
 
-            <ion-col>
-              <h3>{{playerTag.userStat.name}}</h3>
-              <h4>Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}} </h4>
-            </ion-col>
+                <ion-col class="pad-l-10 pad-t-10 text-left" col-8>
+                    <div class="card-header">{{playerTag.userStat.name}}</div>
+                    <div class="card-content">Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}} </div>
 
-          </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+
+          </ion-card>
         </div>
 
       </ion-col>

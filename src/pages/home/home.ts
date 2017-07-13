@@ -4,6 +4,8 @@ import {Http} from '@angular/http';
 import {AppService} from '../../services/AppService';
 import {StatPage} from '../stat/stat';
 
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -55,5 +57,4 @@ export class HomePage {
     this.appService.currentUserTag = userTag;
     this.navCtrl.setRoot(StatPage);
   }
-
 }
