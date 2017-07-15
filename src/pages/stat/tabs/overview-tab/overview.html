@@ -3,14 +3,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Overview</ion-title>
+    <ion-title>Statistics</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
   <ion-grid>
-
     <ion-row>
       <ion-col col-12>
         <ion-row radio-group (ionChange)="setMode($event)">
@@ -37,9 +35,7 @@
         <canvas class="max-w-400" baseChart
                 [data]="winRateChartData"
                 [labels]="doughnutChartLabels"
-                [chartType]="doughnutChartType"
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)"></canvas>
+                [chartType]="doughnutChartType"></canvas>
       </ion-col>
 
 

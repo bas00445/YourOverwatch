@@ -8,30 +8,29 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid>
-
+  <ion-grid class="full-height" id="page-container">
     <ion-row>
       <ion-col col-sm-10 class="center-x">
         <ion-item class="tagInput">
-          <ion-input type="text" placeholder="Enter a tag name"
-                     name="newTagName" [(ngModel)]="newTagName"></ion-input>
+          <ion-input type="text" placeholder="Enter a full battle tag"
+                     name="newFullTag" class="tag" [(ngModel)]="newFullTag"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col col-sm-10 class="center-x">
-        <ion-item class="tagInput">
-          <ion-input type="text" placeholder="Enter a tag id"
-                     name="newTagID" [(ngModel)]="newTagID"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+    <!--<ion-row>-->
+      <!--<ion-col col-sm-10 class="center-x">-->
+        <!--<ion-item class="tagInput">-->
+          <!--<ion-input type="text" placeholder="Enter a tag id"-->
+                     <!--name="newTagID" [(ngModel)]="newTagID"></ion-input>-->
+        <!--</ion-item>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
 
     <ion-row>
       <ion-col col-sm-10 class="center-x">
-        <button ion-button block tappable (click)="getNewBattleTagData()">
-          <p style="display:inline">Submit</p>
+        <button ion-button block tappable (click)="getNewBattleTagData()" class="submit-btn center-x">
+          <p style="display:inline">Search</p>
           <i *ngIf="isLoading" class="loadingIcon fa fa-refresh fa-spin fa-1x fa-fw margin-l-5"></i>
         </button>
       </ion-col>

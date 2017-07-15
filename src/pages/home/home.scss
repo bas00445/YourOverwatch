@@ -43,3 +43,23 @@ page-home {
   font-size: 20px !important;
   font-style: italic !important;
 }
+
+.tagInput {
+  padding-left: 0px;
+  transform: skew(-0.15rad);
+  vertical-align: middle;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+.submit-btn{
+  transform: skew(-0.15rad);
+  vertical-align: middle;
+  width: 90%;
+  background: #2ebbc9;
+}
+
+#page-container{
+  background: #0077b3 !important;
+  padding: 15px;
+}
