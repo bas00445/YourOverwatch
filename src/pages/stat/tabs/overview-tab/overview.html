@@ -7,32 +7,35 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="full-height" id="page-container">
   <ion-grid>
-    <ion-row>
-      <ion-col col-12>
-        <ion-row radio-group (ionChange)="setMode($event)">
-
-          <div class="center-x max-w-400 col-content">
-            <div class="col-content margin-r-20">
-              <ion-label>Quick Play</ion-label>
-              <ion-radio value="selectQP" checked="true" class="margin-t-12 margin-b-12"></ion-radio>
-            </div>
-
-            <div class="col-content">
-              <ion-label>Competitive</ion-label>
-              <ion-radio value="selectCP" checked="false" class="margin-t-12 margin-b-12"></ion-radio>
-            </div>
-          </div>
-
-        </ion-row>
+    <ion-row align="center">
+      <ion-col col-sm-12>
+        <div>
+          <img class="avatar-img" src="{{playerData.overall_stats.avatar}}">
+        </div>
+        <div class="margin-b-10 margin-t-10" id="player-tag">
+          {{playerTag.name}}#{{playerTag.id}}
+        </div>
 
       </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <div class="center-x max-w-300 col-content">
+        <button ion-button id="qp-btn" (click)="setMode('selectQP')"
+                [ngClass]="{'toggle-white': currentMode === 'selectComp'}">Quickplay
+        </button>
+        <button ion-button color="light" id="comp-btn" (click)="setMode('selectComp')"
+                [ngClass]="{'toggle-blue': currentMode != 'selectQP'}">Competitive
+        </button>
+      </div>
     </ion-row>
 
     <ion-row align="center">
       <ion-col col-sm-12 col-md-6>
-        <canvas class="max-w-400" baseChart
+        <canvas class="max-w-200 center-x" baseChart id="win-chart"
                 [data]="winRateChartData"
                 [labels]="doughnutChartLabels"
                 [chartType]="doughnutChartType"></canvas>

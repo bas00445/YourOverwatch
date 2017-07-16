@@ -18,7 +18,6 @@ export class OverviewTab {
   public doughnutChartType: string = 'doughnut';
 
   public currentMode: string;
-  public updateChart = false;
 
   constructor(public navCtrl: NavController,
               private appService: AppService) {
@@ -43,11 +42,9 @@ export class OverviewTab {
 
   public setMode(event: string) {
     this.currentMode = event;
-    this.updateChart = true;
     this.loadDataByMode();
     this.getWinRate();
     this.generateDonutChart();
-    this.updateChart = false;
   }
 
   public loadDataByMode() {
@@ -57,10 +54,5 @@ export class OverviewTab {
       this.playerData = this.appService.currentUserTag.data.us.stats.competitive;
     }
   }
-
-
-
-
-
 
 }

@@ -1,0 +1,37 @@
+#page-container{
+  background: #085176 !important;
+  padding: 15px;
+}
+
+#qp-btn, #comp-btn {
+  transform: skew(-0.15rad);
+  vertical-align: middle;
+  text-transform: initial;
+}
+
+.toggle-white {
+  background: #fff !important;
+  color: black !important;
+}
+
+.toggle-blue{
+  background: #488aff !important;
+  color: #fff !important;
+}
+
+.avatar-img{
+  border-radius: 50%;
+  max-height: 80px;
+  border: 4px solid #34b9fc;
+}
+
+#player-tag{
+  color: #fff;
+  font-size: 18px;
+}
+
+#win-chart{
+  border-radius: 5%;
+  background: #fff;
+  padding: 2px;
+}
