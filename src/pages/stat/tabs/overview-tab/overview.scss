@@ -1,4 +1,4 @@
-#page-container{
+#page-container {
   background: #085176 !important;
   padding: 15px;
 }
@@ -14,24 +14,39 @@
   color: black !important;
 }
 
-.toggle-blue{
+.toggle-blue {
   background: #488aff !important;
   color: #fff !important;
 }
 
-.avatar-img{
+.avatar-img {
   border-radius: 50%;
   max-height: 80px;
   border: 4px solid #34b9fc;
 }
 
-#player-tag{
+#player-tag {
   color: #fff;
   font-size: 18px;
 }
 
-#win-chart{
+#win-chart {
   border-radius: 5%;
   background: #fff;
   padding: 2px;
+}
+
+.win-lose-content {
+  h3, h5 {
+    color: #fff;
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+.counter-effect {
+  line-height: 100px;
+  color: red;
+  margin-left: 30px;
+  font-size: 25px;
 }

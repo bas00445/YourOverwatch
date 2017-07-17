@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { AppService } from '../../../../services/AppService';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {AppService} from '../../../../services/AppService';
 
 @Component({
   selector: 'tab-overview',
@@ -10,6 +10,7 @@ import { AppService } from '../../../../services/AppService';
 export class OverviewTab {
   public playerTag: any;
   public playerData: any;
+  public playerHeroData: any;
   public winRate: any;
   public loseRate: any;
 
@@ -24,9 +25,13 @@ export class OverviewTab {
 
     this.playerTag = appService.currentUserTag.userStat;
     this.playerData = appService.currentUserTag.data;
+    this.playerHeroData = appService.currentUserTag.heroStat;
     this.setMode('selectQP');
     this.getWinRate();
-    this.generateDonutChart();
+  }
+
+  public getTotalPlayTime() {
+    return this.playerData.game_stats.time_played;
   }
 
   public generateDonutChart() {

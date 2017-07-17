@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-grid class="full-height" id="page-container">
     <ion-row>
-      <ion-col col-sm-10 class="center-x">
+      <ion-col col-sm-10 class="center-x max-w-370">
         <ion-item class="tagInput">
           <ion-input type="text" placeholder="Enter a full battle tag"
                      name="newFullTag" class="tag" [(ngModel)]="newFullTag"></ion-input>
@@ -18,17 +18,8 @@
       </ion-col>
     </ion-row>
 
-    <!--<ion-row>-->
-      <!--<ion-col col-sm-10 class="center-x">-->
-        <!--<ion-item class="tagInput">-->
-          <!--<ion-input type="text" placeholder="Enter a tag id"-->
-                     <!--name="newTagID" [(ngModel)]="newTagID"></ion-input>-->
-        <!--</ion-item>-->
-      <!--</ion-col>-->
-    <!--</ion-row>-->
-
     <ion-row>
-      <ion-col col-sm-10 class="center-x">
+      <ion-col col-sm-10 class="center-x max-w-330">
         <button ion-button block tappable (click)="getNewBattleTagData()" class="submit-btn center-x">
           <p style="display:inline">Search</p>
           <i *ngIf="isLoading" class="loadingIcon fa fa-refresh fa-spin fa-1x fa-fw margin-l-5"></i>
@@ -36,27 +27,21 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="player-contaner" align="center">
-      <ion-col col-sm-10>
+    <ion-row class="player-contaner">
+      <ion-col col-sm-10 class="center-x margin-t-0">
         <div *ngFor="let playerTag of appService.listOfPlayerTags" class="fade-in-anim"
              tappable (click)="goToUserStatPage(playerTag)">
 
-          <ion-card>
-            <ion-card-content class="pad-0">
-              <ion-row>
-                <ion-col col-4>
-                  <img src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
-                </ion-col>
+          <ion-row class="max-h-80 max-w-300 card-container center-x margin-b-10">
+            <div class="col-content">
+              <img class="avatar-preview-img" src={{playerTag.data.us.stats.competitive.overall_stats.avatar}}>
+              <div class="pad-l-20 text-left">
+                <div class="card-header">{{playerTag.userStat.name}}</div>
+                <div class="card-content">Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}}</div>
+              </div>
+            </div>
+          </ion-row>
 
-                <ion-col class="pad-l-10 pad-t-10 text-left" col-8>
-                    <div class="card-header">{{playerTag.userStat.name}}</div>
-                    <div class="card-content">Rank: {{playerTag.data.us.stats.competitive.overall_stats.comprank}} </div>
-
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-
-          </ion-card>
         </div>
 
       </ion-col>

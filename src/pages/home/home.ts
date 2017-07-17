@@ -12,7 +12,8 @@ import * as _ from 'lodash';
 })
 export class HomePage {
 
-  newJSONTag: any;
+  newJSON_Data: any;
+  newJSON_HeroData: any;
   newFullTag: string;
   newTagID: string;
   isLoading: boolean = false;
@@ -26,7 +27,21 @@ export class HomePage {
   public getNewBattleTagData(){
     this.http.get('https://owapi.net/api/v3/u/' + this.newFullTag + '/stats').subscribe(
       (response) => {
-        this.newJSONTag = response.json();
+        this.newJSON_Data = response.json();
+        this.getNewBattleTagHeroData();
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
+    this.isLoading = true;
+  }
+
+  public getNewBattleTagHeroData(){
+    this.http.get('https://owapi.net/api/v3/u/' + this.newFullTag + '/heroes').subscribe(
+      (response) => {
+        this.newJSON_HeroData = response.json();
         this.addNewBattleTag();
         this.isLoading = false;
       },
@@ -35,8 +50,6 @@ export class HomePage {
         console.error(error);
       }
     );
-
-    this.isLoading = true;
   }
 
   public addNewBattleTag(){
@@ -46,7 +59,8 @@ export class HomePage {
     this.appService.listOfPlayerTags.push(
       { userStat: {name: newTagName,
                      id: newTagID},
-            data: this.newJSONTag
+            data: this.newJSON_Data,
+            heroStat: this.newJSON_HeroData
       });
 
     this.newFullTag = '';

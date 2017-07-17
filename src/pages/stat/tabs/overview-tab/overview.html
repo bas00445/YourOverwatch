@@ -10,39 +10,42 @@
 <ion-content padding class="full-height" id="page-container">
   <ion-grid>
     <ion-row align="center">
-      <ion-col col-sm-12>
+      <ion-col col-sm-3 class="center-y-children">
+        <div class="row-content center-x win-lose-content">
+          <h3 class="counter-effect">{{winRate}} %</h3>
+          <h5 class="m-t-4">Win</h5>
+        </div>
+      </ion-col>
+
+      <ion-col col-sm-6>
         <div>
           <img class="avatar-img" src="{{playerData.overall_stats.avatar}}">
         </div>
         <div class="margin-b-10 margin-t-10" id="player-tag">
           {{playerTag.name}}#{{playerTag.id}}
         </div>
+      </ion-col>
 
+      <ion-col col-sm-3 class="center-y-children">
+        <div class="row-content center-x win-lose-content">
+          <h3 class="counter-effect">{{loseRate}} %</h3>
+          <h5 class="m-t-4">Lose</h5>
+        </div>
       </ion-col>
 
     </ion-row>
 
     <ion-row>
       <div class="center-x max-w-300 col-content">
-        <button ion-button id="qp-btn" (click)="setMode('selectQP')"
+        <button tappable ion-button id="qp-btn" (click)="setMode('selectQP')"
                 [ngClass]="{'toggle-white': currentMode === 'selectComp'}">Quickplay
         </button>
-        <button ion-button color="light" id="comp-btn" (click)="setMode('selectComp')"
+        <button tappable ion-button color="light" id="comp-btn" (click)="setMode('selectComp')"
                 [ngClass]="{'toggle-blue': currentMode != 'selectQP'}">Competitive
         </button>
       </div>
     </ion-row>
 
-    <ion-row align="center">
-      <ion-col col-sm-12 col-md-6>
-        <canvas class="max-w-200 center-x" baseChart id="win-chart"
-                [data]="winRateChartData"
-                [labels]="doughnutChartLabels"
-                [chartType]="doughnutChartType"></canvas>
-      </ion-col>
-
-
-    </ion-row>
 
   </ion-grid>
 

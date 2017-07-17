@@ -21,42 +21,48 @@ $maxVal: 500;
 @for $i from 0 to $maxVal{
 
   .margin-#{$i}{
-    margin: #{$i}px;
+    margin: #{$i}px !important;
   }
   .margin-l-#{$i}{
-    margin-left: #{$i}px;
+    margin-left: #{$i}px !important;
   }
   .margin-r-#{$i}{
-    margin-right: #{$i}px;
+    margin-right: #{$i}px !important;
   }
   .margin-t-#{$i}{
-    margin-top: #{$i}px;
+    margin-top: #{$i}px !important;
   }
   .margin-b-#{$i}{
-    margin-bottom: #{$i}px;
+    margin-bottom: #{$i}px !important;
   }
 
   .pad-#{$i}{
-    padding: #{$i}px;
+    padding: #{$i}px !important;
   }
   .pad-t-#{$i}{
-    padding-top: #{$i}px;
+    padding-top: #{$i}px !important;
   }
   .pad-r-#{$i}{
-    padding-right: #{$i}px;
+    padding-right: #{$i}px !important;
   }
   .pad-b-#{$i}{
-    padding-bottom: #{$i}px;
+    padding-bottom: #{$i}px !important;
   }
   .pad-l-#{$i}{
-    padding-left: #{$i}px;
+    padding-left: #{$i}px !important;
   }
 
   .min-w-#{$i}{
-    min-width: #{$i}px;
+    min-width: #{$i}px !important;
   }
   .max-w-#{$i}{
-    max-width: #{$i}px;
+    max-width: #{$i}px !important;
+  }
+  .min-h-#{$i}{
+    min-height: #{$i}px !important;
+  }
+  .max-h-#{$i}{
+    max-height: #{$i}px !important;
   }
 }
 
@@ -82,6 +88,11 @@ $maxVal: 500;
   margin: auto;
 }
 
+.center-y-children{
+  display: flex;
+  align-items: center;
+}
+
 .text-left{
   text-align: left;
 }
@@ -99,3 +110,4 @@ $maxVal: 500;
 .full-width{
   width: 100%;
 }
+
