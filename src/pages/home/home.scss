@@ -2,14 +2,13 @@ page-home {
 
 }
 
-.center-x{
+.center-x {
   margin: auto;
 }
 
-.tagInput{
+.tagInput {
   padding-left: 0px;
 }
-
 
 @keyframes fadeInLeft {
   0% {
@@ -22,25 +21,24 @@ page-home {
   }
 }
 
-.fade-in-anim{
+.fade-in-anim {
   animation: fadeInLeft 1s;
 }
 
-
 .player-contaner {
   width: 100%;
-  height: 430px;
+  height: 85%;
   overflow-y: scroll;
   margin-top: 10px;
 }
 
-.card-header{
+.card-header {
   font-size: 25px;
   font-weight: bold;
   font-style: italic;
 }
 
-.card-content{
+.card-content {
   font-size: 20px !important;
   font-style: italic !important;
 }
@@ -53,25 +51,25 @@ page-home {
   border-radius: 5px;
 }
 
-.submit-btn{
+.submit-btn {
   transform: skew(-0.15rad);
   vertical-align: middle;
   width: 90%;
   background: #2ebbc9;
 }
 
-#page-container{
+#page-container {
   background: #085176 !important;
   padding: 15px;
 }
 
-.card-container{
+.card-container {
   background: #fff;
   padding: 5px;
   border-radius: 5px;
 }
 
-.avatar-preview-img{
-  max-width:100%;
+.avatar-preview-img {
+  max-width: 100%;
   max-height: 60px;
 }

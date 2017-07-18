@@ -1,3 +1,6 @@
+<!--<script src="/src/javascripts/counter-effect.js"></script>-->
+<script src="../../../"></script>
+
 <ion-header>
   <ion-navbar swipeBackEnabled="false">
     <button ion-button menuToggle>
@@ -10,14 +13,14 @@
 <ion-content padding class="full-height" id="page-container">
   <ion-grid>
     <ion-row align="center">
-      <ion-col col-sm-3 class="center-y-children">
+      <ion-col col-sm-4 class="center-y-children">
         <div class="row-content center-x win-lose-content">
-          <h3 class="counter-effect">{{winRate}} %</h3>
+          <h4 class="">{{winRate}} %</h4>
           <h5 class="m-t-4">Win</h5>
         </div>
       </ion-col>
 
-      <ion-col col-sm-6>
+      <ion-col col-sm-4>
         <div>
           <img class="avatar-img" src="{{playerData.overall_stats.avatar}}">
         </div>
@@ -26,16 +29,16 @@
         </div>
       </ion-col>
 
-      <ion-col col-sm-3 class="center-y-children">
+      <ion-col col-sm-4 class="center-y-children">
         <div class="row-content center-x win-lose-content">
-          <h3 class="counter-effect">{{loseRate}} %</h3>
+          <h4 class="">{{loseRate}} %</h4>
           <h5 class="m-t-4">Lose</h5>
         </div>
       </ion-col>
 
     </ion-row>
 
-    <ion-row>
+    <ion-row class="heroes-time-container">
       <div class="center-x max-w-300 col-content">
         <button tappable ion-button id="qp-btn" (click)="setMode('selectQP')"
                 [ngClass]="{'toggle-white': currentMode === 'selectComp'}">Quickplay
@@ -44,6 +47,12 @@
                 [ngClass]="{'toggle-blue': currentMode != 'selectQP'}">Competitive
         </button>
       </div>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-sm-12 class="text-center">
+        <label class="text-most-play">Most Played Heroes</label>
+      </ion-col>
     </ion-row>
 
 

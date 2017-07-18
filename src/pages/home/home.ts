@@ -56,6 +56,9 @@ export class HomePage {
     let separate = _.split(this.newFullTag, '-', 2);
     let newTagName = separate[0], newTagID = separate[1];
 
+    this.newJSON_Data = this.appService.data;
+    this.newJSON_HeroData = this.appService.dataHeroes;
+
     this.appService.listOfPlayerTags.push(
       { userStat: {name: newTagName,
                      id: newTagID},
@@ -63,8 +66,8 @@ export class HomePage {
             heroStat: this.newJSON_HeroData
       });
 
-    this.newFullTag = '';
-    console.log(this.appService);
+    // this.newFullTag = '';
+    // console.log(this.appService);
 
   }
 

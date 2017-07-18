@@ -37,16 +37,20 @@
 }
 
 .win-lose-content {
-  h3, h5 {
+  h4, h5 {
     color: #fff;
     font-style: italic;
     margin: 0;
   }
 }
 
-.counter-effect {
-  line-height: 100px;
-  color: red;
-  margin-left: 30px;
-  font-size: 25px;
+.heroes-time-container{
+  height: 65%;
+  overflow-y: scroll;
+}
+
+.text-most-play{
+  margin-top: 40px;
+  font-size: 20px;
+  color: #fff;
 }
