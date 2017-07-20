@@ -15,8 +15,8 @@
     <ion-row align="center">
       <ion-col col-sm-4 class="center-y-children">
         <div class="row-content center-x win-lose-content">
-          <h4 class="">{{winRate}} %</h4>
-          <h5 class="m-t-4">Win</h5>
+          <h5 class="">{{winRate}} %</h5>
+          <h6 class="m-t-4">Win</h6>
         </div>
       </ion-col>
 
@@ -31,14 +31,14 @@
 
       <ion-col col-sm-4 class="center-y-children">
         <div class="row-content center-x win-lose-content">
-          <h4 class="">{{loseRate}} %</h4>
-          <h5 class="m-t-4">Lose</h5>
+          <h5 class="">{{loseRate}} %</h5>
+          <h6 class="m-t-4">Lose</h6>
         </div>
       </ion-col>
 
     </ion-row>
 
-    <ion-row class="heroes-time-container">
+    <ion-row>
       <div class="center-x max-w-300 col-content">
         <button tappable ion-button id="qp-btn" (click)="setMode('selectQP')"
                 [ngClass]="{'toggle-white': currentMode === 'selectComp'}">Quickplay
@@ -49,10 +49,15 @@
       </div>
     </ion-row>
 
-    <ion-row>
+    <ion-row class="margin-t-10">
       <ion-col col-sm-12 class="text-center">
         <label class="text-most-play">Most Played Heroes</label>
       </ion-col>
+    </ion-row>
+
+    <ion-row class="heroes-time-container">
+
+
     </ion-row>
 
 

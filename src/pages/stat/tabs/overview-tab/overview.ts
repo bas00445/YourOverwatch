@@ -19,13 +19,13 @@ export class OverviewTab {
   public doughnutChartType: string = 'doughnut';
 
   public currentMode: string;
+  public heroInfoList: any;
+  public totalPlay
 
   constructor(public navCtrl: NavController,
               private appService: AppService) {
 
     this.playerTag = appService.currentUserTag.userStat;
-    this.playerData = appService.currentUserTag.data;
-    this.playerHeroData = appService.currentUserTag.heroStat;
     this.setMode('selectQP');
     this.getWinRate();
   }
@@ -55,8 +55,10 @@ export class OverviewTab {
   public loadDataByMode() {
     if (this.currentMode === 'selectQP') {
       this.playerData = this.appService.currentUserTag.data.us.stats.quickplay;
+      this.playerHeroData = this.appService.currentUserTag.heroStat.us.heroes.stats.quickplay;
     } else {
       this.playerData = this.appService.currentUserTag.data.us.stats.competitive;
+      this.playerHeroData = this.appService.currentUserTag.heroStat.us.heroes.stats.competitive;
     }
   }
 
