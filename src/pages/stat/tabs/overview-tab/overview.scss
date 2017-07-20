@@ -44,14 +44,21 @@
   }
 }
 
-.heroes-time-container{
+.heroes-time-container {
   width: 100%;
   height: 65%;
   overflow-y: scroll;
 }
 
-.text-most-play{
+.text-most-play {
   margin-top: 40px;
   font-size: 20px;
   color: #fff;
+}
+
+.hero-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: deepskyblue;
 }

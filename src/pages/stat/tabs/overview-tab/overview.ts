@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {AppService} from '../../../../services/AppService';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'tab-overview',
@@ -43,8 +44,7 @@ export class OverviewTab {
   public getHeroTimeList() {
     this.heroesPlayTimeAry = [];
     for(let key in this.heroesPlayTime){
-        console.log(key, this.heroesPlayTime[key]);
-        this.heroesPlayTimeAry.push({key: key, value: this.heroesPlayTime[key]});
+        this.heroesPlayTimeAry.push({key: key, value: Math.ceil(this.heroesPlayTime[key])});
     }
   }
 

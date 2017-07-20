@@ -57,12 +57,19 @@
 
     <ion-row>
       <ion-col col-sm-12>
-        <div *ngFor="let hero of heroesPlayTimeAry">
-          {{hero.key}} : {{hero.value}}
+        <div class="hero-time center-x max-w-320" *ngFor="let hero of heroesPlayTimeAry">
+          <div class="col-content">
+            <div class="hero-icon">
+
+            </div>
+
+            <div class="hero-info">
+              <div>{{hero.key}}</div>
+              <div>{{hero.value}}</div>
+            </div>
+          </div>
         </div>
       </ion-col>
-
-
     </ion-row>
 
 
