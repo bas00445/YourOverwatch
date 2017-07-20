@@ -19,25 +19,20 @@ export class OverviewTab {
   public doughnutChartType: string = 'doughnut';
 
   public currentMode: string;
-  public heroInfoList: any;
-  public totalPlay
+  public heroesPlayTime: any;
+  public heroesPlayTimeAry: any[] = [];
+  public totalPlayTime: any;
+
 
   constructor(public navCtrl: NavController,
               private appService: AppService) {
 
     this.playerTag = appService.currentUserTag.userStat;
     this.setMode('selectQP');
-    this.getWinRate();
   }
 
   public getTotalPlayTime() {
-    return this.playerData.game_stats.time_played;
-  }
-
-  public generateDonutChart() {
-    this.winRateChartData = [];
-    this.winRateChartData.push(this.winRate);
-    this.winRateChartData.push(this.loseRate);
+    this.totalPlayTime = this.playerData.game_stats.time_played;
   }
 
   public getWinRate() {
@@ -45,20 +40,31 @@ export class OverviewTab {
     this.loseRate = 100 - this.winRate;
   }
 
+  public getHeroTimeList() {
+    this.heroesPlayTimeAry = [];
+    for(let key in this.heroesPlayTime){
+        console.log(key, this.heroesPlayTime[key]);
+        this.heroesPlayTimeAry.push({key: key, value: this.heroesPlayTime[key]});
+    }
+  }
+
   public setMode(event: string) {
     this.currentMode = event;
     this.loadDataByMode();
     this.getWinRate();
-    this.generateDonutChart();
+    this.getHeroTimeList();
+    this.getTotalPlayTime();
   }
 
   public loadDataByMode() {
     if (this.currentMode === 'selectQP') {
       this.playerData = this.appService.currentUserTag.data.us.stats.quickplay;
-      this.playerHeroData = this.appService.currentUserTag.heroStat.us.heroes.stats.quickplay;
+      this.heroesPlayTime = this.appService.currentUserTag.heroStat.us.heroes.playtime.quickplay;
+      // this.playerHeroData = this.appService.currentUserTag.heroStat.us.heroes.stats.quickplay;
     } else {
       this.playerData = this.appService.currentUserTag.data.us.stats.competitive;
-      this.playerHeroData = this.appService.currentUserTag.heroStat.us.heroes.stats.competitive;
+      this.heroesPlayTime = this.appService.currentUserTag.heroStat.us.heroes.playtime.competitive;
+      // this.playerHeroData = this.appService.currentUserTag.heroStat.us.heroes.stats.competitive;
     }
   }
 

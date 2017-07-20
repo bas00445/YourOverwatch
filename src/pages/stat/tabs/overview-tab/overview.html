@@ -55,7 +55,12 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="heroes-time-container">
+    <ion-row>
+      <ion-col col-sm-12>
+        <div *ngFor="let hero of heroesPlayTimeAry">
+          {{hero.key}} : {{hero.value}}
+        </div>
+      </ion-col>
 
 
     </ion-row>
