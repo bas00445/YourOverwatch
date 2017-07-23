@@ -10,8 +10,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="full-height fade-in-anim" id="page-container">
-  <ion-grid>
+<ion-content padding class="full-height" id="page-container">
+  <ion-grid class="fade-in-anim">
     <ion-row align="center">
       <ion-col col-sm-4 class="center-y-children">
         <div class="row-content center-x win-lose-content">
@@ -19,7 +19,7 @@
           <h6 class="m-t-4">Win</h6>
         </div>
       </ion-col>
-
+      
       <ion-col col-sm-4>
         <div>
           <img class="avatar-img" src="{{playerData.overall_stats.avatar}}">
@@ -28,51 +28,57 @@
           {{playerTag.name}}#{{playerTag.id}}
         </div>
       </ion-col>
-
+      
       <ion-col col-sm-4 class="center-y-children">
         <div class="row-content center-x win-lose-content">
           <h5 class="">{{loseRate}} %</h5>
           <h6 class="m-t-4">Lose</h6>
         </div>
       </ion-col>
-
+      
     </ion-row>
-
+    
     <ion-row>
       <div class="center-x max-w-300 col-content">
         <button tappable ion-button id="qp-btn" (click)="setMode('selectQP')"
-                [ngClass]="{'toggle-white': currentMode === 'selectComp'}">Quickplay
-        </button>
-        <button tappable ion-button color="light" id="comp-btn" (click)="setMode('selectComp')"
-                [ngClass]="{'toggle-blue': currentMode != 'selectQP'}">Competitive
-        </button>
-      </div>
-    </ion-row>
+        [ngClass]="{'toggle-white': currentMode === 'selectComp'}">Quickplay
+      </button>
+      <button tappable ion-button color="light" id="comp-btn" (click)="setMode('selectComp')"
+      [ngClass]="{'toggle-blue': currentMode != 'selectQP'}">Competitive
+    </button>
+  </div>
+</ion-row>
 
-    <ion-row class="margin-t-10">
-      <ion-col col-sm-12 class="text-center">
-        <label class="text-most-play">Most Played Heroes</label>
-      </ion-col>
-    </ion-row>
+<ion-row class="margin-t-10">
+  <ion-col col-sm-12 class="text-center">
+    <label class="text-most-play">Most Played Heroes</label>
+  </ion-col>
+</ion-row>
 
-    <ion-row class="margin-t-10">
-      <ion-col col-sm-12>
-        <div class="hero-time-container center-x" *ngFor="let hero of heroesPlayTimeAry">
-          <div class="col-content">
-            <div class="hero-icon margin-r-10">
+<ion-row class="margin-t-10">
+  <ion-col col-sm-12>
+    <div class="hero-time-container center-x" *ngFor="let hero of heroesPlayTimeAry">
+      <div class="col-content">
+        <div class="hero-icon margin-r-10">
+          
+        </div>
+        
+        <div class="row-content full-width">
+          <div class="hero-info col-content">
+            <div class="flex-1">{{hero.key}}</div>
+            <div class="flex-1 text-right pad-r-5">{{hero.value}}</div>
+          </div>
 
-            </div>
-
-            <div class="hero-info">
-              <div>{{hero.key}}</div>
-              <div>{{hero.value}}</div>
-            </div>
+          <div class="percent-time margin-t-10 scale-x-anim" 
+          [style.width]="getPercentTime(hero.value)">
           </div>
         </div>
-      </ion-col>
-    </ion-row>
+      </div>
+    </div>
+  </ion-col>
+</ion-row>
 
 
-  </ion-grid>
+</ion-grid>
 
 </ion-content>

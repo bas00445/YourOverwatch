@@ -34,6 +34,7 @@ export class OverviewTab {
     
     public getTotalPlayTime() {
       this.totalPlayTime = this.playerData.game_stats.time_played;
+      return this.totalPlayTime
     }
     
     public getWinRate() {
@@ -86,6 +87,10 @@ export class OverviewTab {
         this.heroesPlayTime = this.appService.currentUserTag.heroStat.us.heroes.playtime.competitive;
         // this.playerHeroData = this.appService.currentUserTag.heroStat.us.heroes.stats.competitive;
       }
+    }
+
+    public getPercentTime(time){
+      return (time / this.heroesPlayTimeAry[0].value)*100 + '%';
     }
     
   }

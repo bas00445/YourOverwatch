@@ -86,3 +86,25 @@
   color: #fff;
   font-size: 15px;
 }
+
+.percent-time {
+  background: #34b9fc;
+  height: 5px;
+  border-radius: 50%;
+}
+
+
+@keyframes fadeInLeft {
+   0% {
+      opacity: 0;
+      transform: translateX(-50px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}   
+
+.scale-x-anim {
+  animation: fadeInLeft 2s;
+}
