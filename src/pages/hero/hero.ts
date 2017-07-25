@@ -9,11 +9,14 @@ import {AppService} from '../../services/AppService';
 
 export class HeroPage {
 
+  private heroesData: any;
+
   constructor(public navCtrl: NavController,
               private appService: AppService,
               private navParams: NavParams ) {
 
     console.log(navParams);
+    this.heroesData = navParams.data.heroesData;
 
   }
 
