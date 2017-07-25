@@ -5,6 +5,7 @@ import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {ListPage} from '../pages/list/list';
+import {HeroPage} from '../pages/hero/hero';
 
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -23,6 +24,7 @@ import {ChartsModule} from 'ng2-charts';
     MyApp,
     HomePage,
     ListPage,
+    HeroPage,
     OverviewTab,
     TabsPage
   ],
@@ -38,6 +40,7 @@ import {ChartsModule} from 'ng2-charts';
     MyApp,
     HomePage,
     ListPage,
+    HeroPage,
     OverviewTab,
     TabsPage
   ],
